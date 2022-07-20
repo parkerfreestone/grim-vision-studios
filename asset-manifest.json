@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.js": "/grim-vision-studios/static/js/main.9c910a32.js",
+    "main.js": "/grim-vision-studios/static/js/main.f93385ba.js",
+    "static/media/homeImage.jpg": "/grim-vision-studios/static/media/homeImage.6ee1c1caf558c9c8d6c1.jpg",
     "index.html": "/grim-vision-studios/index.html",
-    "main.9c910a32.js.map": "/grim-vision-studios/static/js/main.9c910a32.js.map"
+    "main.f93385ba.js.map": "/grim-vision-studios/static/js/main.f93385ba.js.map"
   },
   "entrypoints": [
-    "static/js/main.9c910a32.js"
+    "static/js/main.f93385ba.js"
   ]
 }
