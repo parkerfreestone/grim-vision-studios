@@ -40,29 +40,39 @@ const HeroBanner = ({ heading, text, height, image = null }) => {
                         flexDirection: 'column',
                     }}
                 >
-                    {
-                        heading
-                            ? <Paper
-                                style={styles.paperContainer}
-                                sx={{ px: { md: 8 }, py: { md: 3 }, mb: { md: 4 }, textAlign: { xs: 'center', md: 'left' } }}
+                    {heading
+                        ? <Paper
+                            style={styles.paperContainer}
+                            sx={{
+                                px: { md: 8 },
+                                py: { md: 3 },
+                                mb: { md: 4 },
+                                textAlign: { xs: 'center', md: 'left' }
+                            }}
+                        >
+                            <Typography
+                                variant='h2'
+                                component='h1'
+                                fontWeight='bold'
                             >
-                                <Typography
-                                    variant='h2'
-                                    component='h1'
-                                    fontWeight='bold'
-                                >
-                                    {heading}
-                                </Typography>
-                                <Typography
+                                {heading}
+                            </Typography>
+
+                            {text
+                                ? <Typography
                                     variant='overline'
-                                >{text}</Typography>
-                            </Paper>
-                            : null
+                                >
+                                    {text}
+                                </Typography>
+                                : null
+                            }
+                        </Paper>
+                        : null
                     }
 
                 </Box>
             </Container>
-        </Container >
+        </Container>
     );
 }
 
