@@ -33,6 +33,7 @@ import Home from '../routes/Home';
 import About from '../routes/About';
 import Community from '../routes/Community';
 import Games from '../routes/Games';
+import Support from "../routes/Support";
 
 const NavigationBar = () => {
 
@@ -105,7 +106,7 @@ const NavigationBar = () => {
         <>
             <AppBar
                 sx={{
-                    bgcolor: '#1D1128',
+                    bgcolor: '#02182B',
                 }}
                 position='static'
                 component='nav'
@@ -184,11 +185,16 @@ const NavigationBar = () => {
                                 </Link>
                             </Button>
                             <Button
-                                color='secondary'
+                                color='primary'
                                 variant='contained'
                                 endIcon={<VolunteerActivism />}
                             >
-                                Support Us
+                                <Link
+                                    style={styles.link}
+                                    to="/support"
+                                >
+                                    Support Us
+                                </Link>
                             </Button>
                             <IconButton>
 
@@ -219,6 +225,7 @@ const NavigationBar = () => {
                 <Route path='/about' element={<About />} />
                 <Route path='/games' element={<Games />} />
                 <Route path='/community' element={<Community />} />
+                <Route path='/support' element={<Support />} />
             </Routes>
         </>
     );

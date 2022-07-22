@@ -10,7 +10,7 @@ const HeroBanner = ({ heading, text, height, image = null }) => {
 
     const styles = {
         heroBannerContainer: {
-            height: (height === 'long' ? '60vh' : '20vh'),
+            height: (height === 'long' ? '60vh' : '30vh'),
             background: (image ? `url(${image})` : 'linear-gradient(45deg, rgba(109,114,195,1) 0%, rgba(89,65,169,1) 100%)'),
             backgroundSize: 'cover',
             backgroundPosition: '25%',
@@ -44,10 +44,19 @@ const HeroBanner = ({ heading, text, height, image = null }) => {
                         ? <Paper
                             style={styles.paperContainer}
                             sx={{
-                                px: { md: 8 },
+                                textAlign: {
+                                    xs: 'center',
+                                    md: 'left'
+                                },
+                                px: {
+                                    xs: 1,
+                                    md: 8
+                                },
+                                mb: {
+                                    xs: 2,
+                                    md: 4
+                                },
                                 py: { md: 3 },
-                                mb: { md: 4 },
-                                textAlign: { xs: 'center', md: 'left' }
                             }}
                         >
                             <Typography
