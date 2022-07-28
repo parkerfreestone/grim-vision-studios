@@ -11,7 +11,7 @@ const HeroBanner = ({ heading, text, height, image = null }) => {
     const styles = {
         heroBannerContainer: {
             height: (height === 'long' ? '60vh' : '30vh'),
-            background: (image ? `url(${image})` : 'linear-gradient(45deg, rgba(109,114,195,1) 0%, rgba(89,65,169,1) 100%)'),
+            background: (image ? `url(${image})` : 'linear-gradient(45deg, #d32f2f 30%, #9f1a1a 90%)'),
             backgroundSize: 'cover',
             backgroundPosition: '25%',
             backgroundRepeat: 'no-repeat'

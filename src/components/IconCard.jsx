@@ -8,8 +8,6 @@ export const IconCard = ({ icon, heading, text, url, bg }) => {
         <Card
             variant='outlined'
             sx={{
-                // border: 'none',
-                // borderRadius: 0,
                 background: bg,
                 mt: 2,
             }}
@@ -38,13 +36,13 @@ export const IconCard = ({ icon, heading, text, url, bg }) => {
                 </CardContent>
                 <CardActions>
                     <Button
-                        color='primary'
                         size='small'
                         endIcon={<ArrowForwardRounded />}
+                        sx={{ color: 'gray' }}
                     >
-                        {/* <Link to={`/${url}`}> */}
-                        Learn More
-                        {/* </Link> */}
+                        <Link to={`${url}`} style={{ color: 'gray', textDecoration: 'none' }}>
+                            Learn More
+                        </Link>
                     </Button>
                 </CardActions>
             </Box>

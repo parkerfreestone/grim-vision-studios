@@ -84,10 +84,10 @@ const NavigationBar = () => {
                             <ListItemIcon>
                                 {index === 0
                                     ? <PhoneIphone
-                                        sx={{ color: '#6D72C3' }}
+                                        sx={{ color: '#d32f2f' }}
                                     />
                                     : <VolunteerActivism
-                                        sx={{ color: '#6D72C3' }}
+                                        sx={{ color: '#d32f2f' }}
                                     />}
                             </ListItemIcon>
                             {index === 0
@@ -108,7 +108,7 @@ const NavigationBar = () => {
                 sx={{
                     bgcolor: '#02182B',
                 }}
-                position='static'
+                // position='static'
                 component='nav'
             >
                 <Container
@@ -185,7 +185,7 @@ const NavigationBar = () => {
                                 </Link>
                             </Button>
                             <Button
-                                color='primary'
+                                color='error'
                                 variant='contained'
                                 endIcon={<VolunteerActivism />}
                             >
