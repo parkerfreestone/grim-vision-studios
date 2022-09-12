@@ -1,7 +1,7 @@
 import React from "react";
 
 import {
-    PeopleAltRounded,
+    PhoneAndroidRounded,
     VolunteerActivism,
 } from "@mui/icons-material";
 import {
@@ -11,6 +11,7 @@ import {
     Button,
     Stack,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
 
@@ -42,14 +43,18 @@ const Footer = () => {
                     py: 10
                 }}
             >
-                <Container maxWidth='xl'>
+                <Container
+                    maxWidth='xl'
+                    sx={{ textAlign: { xs: 'center', md: 'left' } }}
+                >
                     <Grid
                         container
-                        spacing={15}
+                        spacing={{ xs: 5, md: 15 }}
                     >
                         <Grid
                             item
-                            xl={3}
+                            md={3}
+                            xs={12}
                         >
                             <Typography
                                 variant="h5"
@@ -66,7 +71,9 @@ const Footer = () => {
                         </Grid>
                         <Grid
                             item
-                            xl={3}
+                            md={3}
+                            sm={6}
+                            xs={12}
                         >
                             <Stack spacing={1}>
                                 <Typography
@@ -75,35 +82,41 @@ const Footer = () => {
                                 >
                                     Explore
                                 </Typography>
-                                <a
+                                <Link
+                                    to='/'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     Home
-                                </a>
-                                <a
+                                </Link>
+                                <Link
+                                    to='/about'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     About
-                                </a>
-                                <a
+                                </Link>
+                                <Link
+                                    to='/games'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     Games
-                                </a>
-                                <a
+                                </Link>
+                                {/* <Link
+                                    to='/community'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     Community
-                                </a>
+                                </Link> */}
                             </Stack>
                         </Grid>
                         <Grid
                             item
-                            xl={3}
+                            md={3}
+                            sm={6}
+                            xs={12}
                         >
                             <Stack spacing={1}>
                                 <Typography
@@ -112,31 +125,34 @@ const Footer = () => {
                                 >
                                     Legal
                                 </Typography>
-                                <a
+                                <Link
+                                    to='/privacy'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     Privacy
-                                </a>
-                                <a
+                                </Link>
+                                <Link
+                                    to='/tos'
                                     style={textStyles.link}
                                     variant='text'
                                 >
                                     Terms of Service
-                                </a>
+                                </Link>
                             </Stack>
                         </Grid>
                         <Grid
                             item
-                            xl={3}
+                            md={3}
+                            xs={12}
                         >
                             <Stack spacing={1}>
                                 <Button
                                     variant='contained'
                                     color='error'
-                                    endIcon={<PeopleAltRounded />}
+                                    endIcon={<PhoneAndroidRounded />}
                                 >
-                                    Join the Community
+                                    Contact Us
                                 </Button>
                                 <Button
                                     variant='contained'

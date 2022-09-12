@@ -1,8 +1,8 @@
 import { Avatar } from "@mui/material";
 import React from "react";
 
-import { GitHub, Twitter } from "@mui/icons-material";
-import { Paper, Grid, Typography, Box, Stack, IconButton, Skeleton, Badge, Divider } from "@mui/material";
+import { GitHub, Instagram, Twitter } from "@mui/icons-material";
+import { Paper, Typography, Box, Stack, IconButton, Skeleton, Divider } from "@mui/material";
 
 const ContactCard = ({
     name,
@@ -12,6 +12,16 @@ const ContactCard = ({
     social1,
     social2
 }) => {
+
+    const renderSocialIcon = (link) => {
+        if (link.includes('instagram'))
+            return <Instagram />
+        else if (link.includes('twitter'))
+            return <Twitter />
+        else if (link.includes('git'))
+            return <GitHub />
+    }
+
     return (
         <Paper
             variant='outlined'
@@ -32,10 +42,10 @@ const ContactCard = ({
                         />}
                     <Box sx={{ display: 'flex' }}>
                         <IconButton href={social1}>
-                            <Twitter />
+                            {renderSocialIcon(social1)}
                         </IconButton>
                         <IconButton href={social2}>
-                            <GitHub />
+                            {social2 ? renderSocialIcon(social2) : null}
                         </IconButton>
                     </Box>
                 </Box>

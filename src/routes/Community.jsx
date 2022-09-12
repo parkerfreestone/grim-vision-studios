@@ -4,11 +4,12 @@ const Community = () => {
     return (
         <>
             <HeroBanner
-                heading='Community Page'
-                text='Example text for page heading...'
+                heading='Community'
+            // text='Example text for page heading...'
             // height='long'
             // image={'./home-page.jpg'}
             />
+
         </>
     );
 }

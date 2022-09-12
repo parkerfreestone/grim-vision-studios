@@ -4,8 +4,8 @@ const Support = () => {
     return (
         <>
             <HeroBanner
-                heading='Support Page'
-                text='Example text for page heading...'
+                heading='Support Us'
+            // text='Example text for page heading...'
             // height='long'
             // image={'./home-page.jpg'}
             />

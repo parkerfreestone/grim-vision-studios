@@ -60,7 +60,7 @@ const HeroBanner = ({ heading, text, height, image = null }) => {
                             }}
                         >
                             <Typography
-                                variant='h2'
+                                variant='h3'
                                 component='h1'
                                 fontWeight='bold'
                             >

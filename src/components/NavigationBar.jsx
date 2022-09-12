@@ -43,7 +43,6 @@ const NavigationBar = () => {
         if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
             return;
         }
-
         setOpen(open);
     }
 
@@ -62,14 +61,25 @@ const NavigationBar = () => {
             onKeyDown={toggleDrawer(false)}
         >
             <List>
-                {['Home', 'About', 'Games', 'Community'].map((text) => (
+                {['Home', 'About', 'Games'].map((text) => (
                     <ListItem
                         key={text}
                         disablePadding
                     >
-                        <ListItemButton>
-                            <ListItemText primary={text} />
-                        </ListItemButton>
+                        <Link
+                            to={text !== 'Home' ? text.toLowerCase() : '/'}
+                            style={{ textDecoration: 'none', width: '100%' }}
+                        >
+                            <ListItemButton
+                                sx={{
+                                    color: 'black',
+                                    textDecoration: 'none',
+                                    width: '100%'
+                                }}
+                            >
+                                <ListItemText primary={text} />
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
@@ -80,26 +90,35 @@ const NavigationBar = () => {
                         key={text}
                         disablePadding
                     >
-                        <ListItemButton>
-                            <ListItemIcon>
+                        <Link
+                            to={`/${text.toLowerCase().split(" ")[0]}`}
+                            style={{ textDecoration: 'none', width: '100%' }}
+                        >
+                            <ListItemButton
+                                sx={{
+                                    color: 'black',
+                                }}
+                            >
+                                <ListItemIcon>
+                                    {index === 0
+                                        ? <PhoneIphone
+                                            sx={{ color: '#d32f2f' }}
+                                        />
+                                        : <VolunteerActivism
+                                            sx={{ color: '#d32f2f' }}
+                                        />}
+                                </ListItemIcon>
                                 {index === 0
-                                    ? <PhoneIphone
-                                        sx={{ color: '#d32f2f' }}
-                                    />
-                                    : <VolunteerActivism
-                                        sx={{ color: '#d32f2f' }}
-                                    />}
-                            </ListItemIcon>
-                            {index === 0
-                                ? <ListItemText primary={text} secondary='Ask a question' />
-                                : <ListItemText primary={text} secondary='Set up donations' />
-                            }
+                                    ? <ListItemText primary={text} secondary='Ask a question' />
+                                    : <ListItemText primary={text} secondary='Set up donations' />
+                                }
 
-                        </ListItemButton>
+                            </ListItemButton>
+                        </Link>
                     </ListItem>
                 ))}
             </List>
-        </Box>)
+        </Box >)
 
 
     return (
@@ -135,14 +154,17 @@ const NavigationBar = () => {
                         <Box
                             sx={{ flexGrow: 1 }}
                         >
-                            <Typography
-                                variant='h6'
-                                component='div'
-                                fontWeight='bold'
-                                sx={{ textAlign: { xs: 'center', md: 'left' } }}
-                            >
-                                Grim Vision Studios
-                            </Typography>
+                            <Link to='/' style={{ textDecoration: 'none' }}>
+                                <Typography
+                                    variant='h6'
+                                    component='div'
+                                    fontWeight='bold'
+                                    color='white'
+                                    sx={{ textAlign: { xs: 'center', md: 'left' } }}
+                                >
+                                    Grim Vision Studios
+                                </Typography>
+                            </Link>
                         </Box>
                         <Stack
                             direction='row'
@@ -152,50 +174,50 @@ const NavigationBar = () => {
                             }}
                         >
 
-                            <Button color='inherit'>
-                                <Link
-                                    style={styles.link}
-                                    to="/"
-                                >
-                                    Home
-                                </Link>
-                            </Button>
-                            <Button color='inherit'>
-                                <Link
-                                    style={styles.link}
-                                    to="/about"
-                                >
-                                    About
-                                </Link>
-                            </Button>
-                            <Button color='inherit'>
-                                <Link
-                                    style={styles.link}
-                                    to="/games"
-                                >
-                                    Games
-                                </Link>
-                            </Button>
-                            <Button color='inherit'>
-                                <Link
-                                    style={styles.link}
-                                    to="/community"
-                                >
-                                    Community
-                                </Link>
-                            </Button>
-                            <Button
-                                color='error'
-                                variant='contained'
-                                endIcon={<VolunteerActivism />}
+                            <Link
+                                style={styles.link}
+                                to="/"
                             >
-                                <Link
-                                    style={styles.link}
-                                    to="/support"
+                                <Button color='inherit'>
+                                    Home
+                                </Button>
+                            </Link>
+                            <Link
+                                style={styles.link}
+                                to="/about"
+                            >
+                                <Button color='inherit'>
+                                    About
+                                </Button>
+                            </Link>
+                            <Link
+                                style={styles.link}
+                                to="/games"
+                            >
+                                <Button color='inherit'>
+                                    Games
+                                </Button>
+                            </Link>
+                            {/* <Link
+                                style={styles.link}
+                                to="/community"
+                            >
+                                <Button color='inherit'>
+                                    Community
+                                </Button>
+                            </Link> */}
+                            <Link
+                                style={styles.link}
+                                to="/support"
+                            >
+                                <Button
+                                    color='error'
+                                    variant='contained'
+                                    endIcon={<VolunteerActivism />}
                                 >
                                     Support Us
-                                </Link>
-                            </Button>
+                                </Button>
+                            </Link>
                             <IconButton>
 
                             </IconButton>

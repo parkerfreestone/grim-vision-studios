@@ -1,4 +1,4 @@
-import { Paper, Grid, Typography, Box, Stack, IconButton, Skeleton, Badge, Divider } from "@mui/material";
+import { Grid, Typography, Skeleton } from "@mui/material";
 import { Container } from "@mui/system";
 import HeroBanner from "../components/HeroBanner";
 import ContactCard from "../components/ContactCard"
@@ -8,11 +8,11 @@ const About = () => {
 
     const developers = [
         {
-            name: 'Parker Freestone',
-            role: 'Website Developer',
-            social1: 'https://www.google.com',
-            social2: 'https://www.cheese.com',
-            desc: 'A very small description about the developer will go here.'
+            name: 'Bryce Montgomery',
+            role: 'Chief Operating Officer',
+            social1: 'https://twitter.com/BryceMontyGVS',
+            // social2: 'https://www.instagram.com',
+            desc: 'I have always had a passion for creating games, hiking, cars, and food.'
         },
         {
             name: 'Parker Freestone',
@@ -24,7 +24,7 @@ const About = () => {
         {
             name: 'Parker Freestone',
             role: 'Website Developer',
-            social1: 'https://www.google.com',
+            social1: '',
             social2: 'https://www.cheese.com',
             desc: 'A very small description about the developer will go here.'
         },
@@ -129,7 +129,7 @@ const About = () => {
 
             <Container
                 maxWidth="xl"
-                sx={{ my: 5 }}
+                sx={{ my: 10 }}
             >
                 <Typography variant="h3" sx={{ fontWeight: 'bold' }}>
                     Team
@@ -155,15 +155,13 @@ const About = () => {
                                 role={role}
                                 desc={desc}
                                 social1={social1}
-                                socail2={social2}
+                                social2={social2}
                             />
                         </Grid>
 
                     ))}
                 </Grid>
             </Container>
-
-            <Footer />
         </>
     );
 }

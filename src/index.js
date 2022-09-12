@@ -6,6 +6,7 @@ import { CssBaseline, createTheme } from '@mui/material';
 
 // COMPONENTS
 import NavigationBar from "./components/NavigationBar"
+import Footer from './components/Footer';
 
 
 const theme = createTheme({
@@ -26,6 +27,7 @@ root.render(
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <NavigationBar />
+        <Footer />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>
